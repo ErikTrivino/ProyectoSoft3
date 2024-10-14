@@ -1,0 +1,38 @@
+2024-10-14T18:48:09.290-05:00  INFO 12360 --- [ProyectoTelesai] [restartedMain] c.t.p.ProyectoTelesaiApplication         : Starting ProyectoTelesaiApplication using Java 17.0.12 with PID 12360 (C:\Users\david\Desktop\UNI\UniQuindio\SEMESTRE 2024-1\INGENIERÍA DE SOFTWARE II\Release\Proyecto\Proyecto\ProyectoTelesai\build\classes\java\main started by david in C:\Users\david\Desktop\UNI\UniQuindio\SEMESTRE 2024-1\INGENIERÍA DE SOFTWARE II\Release\Proyecto\Proyecto\ProyectoTelesai)
+2024-10-14T18:48:09.293-05:00  INFO 12360 --- [ProyectoTelesai] [restartedMain] c.t.p.ProyectoTelesaiApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-10-14T18:48:09.355-05:00  INFO 12360 --- [ProyectoTelesai] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-10-14T18:48:09.356-05:00  INFO 12360 --- [ProyectoTelesai] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-10-14T18:48:10.161-05:00  INFO 12360 --- [ProyectoTelesai] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2024-10-14T18:48:10.181-05:00  INFO 12360 --- [ProyectoTelesai] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 R2DBC repository interfaces.
+2024-10-14T18:48:11.154-05:00  WARN 12360 --- [ProyectoTelesai] [restartedMain] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'connectionFactory' defined in class path resource [org/springframework/boot/autoconfigure/r2dbc/ConnectionFactoryConfigurations$PoolConfiguration$PooledConnectionFactoryConfiguration.class]: Failed to instantiate [io.r2dbc.pool.ConnectionPool]: Factory method 'connectionFactory' threw exception with message: Failed to determine a suitable R2DBC Connection URL
+2024-10-14T18:48:11.163-05:00  INFO 12360 --- [ProyectoTelesai] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-10-14T18:48:11.191-05:00 ERROR 12360 --- [ProyectoTelesai] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a ConnectionFactory: 'url' attribute is not specified and no embedded database could be configured.
+
+Reason: Failed to determine a suitable R2DBC Connection URL
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2024-10-14T18:51:50.202-05:00  INFO 11048 --- [ProyectoTelesai] [main] c.t.p.ProyectoTelesaiApplication         : Starting ProyectoTelesaiApplication using Java 17.0.12 with PID 11048 (C:\Users\david\Desktop\UNI\UniQuindio\SEMESTRE 2024-1\INGENIERÍA DE SOFTWARE II\Release\Proyecto\Proyecto\ProyectoTelesai\build\classes\java\main started by david in C:\Users\david\Desktop\UNI\UniQuindio\SEMESTRE 2024-1\INGENIERÍA DE SOFTWARE II\Release\Proyecto\Proyecto\ProyectoTelesai)
+2024-10-14T18:51:50.206-05:00  INFO 11048 --- [ProyectoTelesai] [main] c.t.p.ProyectoTelesaiApplication         : No active profile set, falling back to 1 default profile: "default"
+2024-10-14T18:51:51.423-05:00  INFO 11048 --- [ProyectoTelesai] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9091 (http)
+2024-10-14T18:51:51.442-05:00  INFO 11048 --- [ProyectoTelesai] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-14T18:51:51.442-05:00  INFO 11048 --- [ProyectoTelesai] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-14T18:51:51.510-05:00  INFO 11048 --- [ProyectoTelesai] [main] o.a.c.c.C.[.[localhost].[/api/v1]        : Initializing Spring embedded WebApplicationContext
+2024-10-14T18:51:51.511-05:00  INFO 11048 --- [ProyectoTelesai] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1248 ms
+2024-10-14T18:51:51.915-05:00  INFO 11048 --- [ProyectoTelesai] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9091 (http) with context path '/api/v1'
+2024-10-14T18:51:51.925-05:00  INFO 11048 --- [ProyectoTelesai] [main] c.t.p.ProyectoTelesaiApplication         : Started ProyectoTelesaiApplication in 2.268 seconds (process running for 3.19)
