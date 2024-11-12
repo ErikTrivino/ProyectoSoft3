@@ -1,0 +1,33 @@
+body {
+    font-family: sans-serif;
+    background-color: #ffffff; 
+    margin: 0;               
+    height: 100vh;              
+}
+
+.card {
+    border-radius: 8px;
+}
+
+h1 {
+    color: #060606;
+}
+
+.form-control {
+    border: 1px solid #0c0c0c;
+}
+
+.form-control:focus {
+    border-color: #040404;
+    box-shadow: 0 0 0 0.25rem rgba(203, 24, 24, 0.25);
+}
+
+.btn-primary {
+    background-color: #CB1818;
+    border-color: #CB1818;
+}
+
+.btn-primary:hover {
+    background-color: #9e1515;
+    border-color: #9e1515;
+}
