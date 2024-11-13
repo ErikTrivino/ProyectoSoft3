@@ -4,5 +4,5 @@ import { AppComponent } from './app/app.component';
 import { LoginComponent } from './app/login/login.component';
 import { RequestReviewComponent } from './app/request-review/request-review.component';
 
-bootstrapApplication(RequestReviewComponent, appConfig)
+bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));

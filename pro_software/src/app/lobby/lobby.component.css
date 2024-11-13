@@ -5,11 +5,7 @@ body {
 }
 
 
-header {
-    background-color: red;
-    color: white;
-    padding: 1em 0;
-}
+
 
 .container {
     display: flex;
@@ -22,13 +18,6 @@ header {
 }
 
 
-.containerHeader {
-    margin-right: 40px;
-    margin-left: 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 
 h1 {
