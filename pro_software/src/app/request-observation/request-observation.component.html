@@ -1,1 +1,62 @@
-<p>request-observation works!</p>
+<div class="telesai-popup">
+    <div class="header">
+      <h2>Telesai</h2>
+      <button class="close-button" (click)="onClose()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="content">
+        <h2>Solicitud</h2>
+      <div class="field">
+        <label for="numero">Numero:</label>
+        <input type="text" id="numero" [(ngModel)]="numero">
+      </div>
+      <div class="field">
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" [(ngModel)]="estado">
+      </div>
+      <div class="field">
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" [(ngModel)]="cliente">
+      </div>
+      <div class="field">
+        <label for="ubicacion">Ubicacion:</label>
+        <input type="text" id="ubicacion" [(ngModel)]="ubicacion">
+      </div>
+      <div class="field">
+        <label for="servicio">Servicio:</label>
+        <input type="text" id="servicio" [(ngModel)]="servicio">
+      </div>
+      <div class="field">
+        <label for="supervisor">Supervisor:</label>
+        <input type="text" id="supervisor" [(ngModel)]="supervisor">
+      </div>
+      <div class="field">
+        <label for="operario">Operario:</label>
+        <input type="text" id="operario" [(ngModel)]="operario">
+      </div>
+      <div class="field">
+        <label for="observacion">Observacion:</label>
+        <textarea id="observacion" [(ngModel)]="observacion"></textarea>
+      </div>
+      <div class="evidence-acta">
+        <div class="evidence">
+          <label>Evidencia</label>
+          <button class="acta-button" (click)="onDownloadActa()">
+            <img src="icons/clip.png" alt="Icono de Acta" class="button-icon" width="50"/>
+          </button>
+        </div>
+        <div class="acta">
+          <label>Acta</label>
+          <button class="acta-button" (click)="onDownloadActa()">
+            <img src="icons/descargas.png" alt="Icono de Acta" class="button-icon" width="50" />
+            Descargar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="actions">
+      <button (click)="onValidate()">Validar</button>
+      <button (click)="onReject()">Rechazar</button>
+    </div>
+</div>
