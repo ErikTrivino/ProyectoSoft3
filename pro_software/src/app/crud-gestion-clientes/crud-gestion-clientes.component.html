@@ -13,42 +13,54 @@
     
 
     <!-- Contenedor principal -->
-    <div class="container">
-        <h1>Clientes</h1>
-
-        <!-- Barra de búsqueda -->
-        <div class="search-bar">
-            <input type="text" placeholder="Ingresar Id o nombre">
-            <button class="search-button">Buscar</button>
+    <div class="container mt-5">
+        <div class="card">
+          <div class="card-header ps-5 pt-4 pb-4">
+            <h5 class="mb-0"><i class="fa-solid fa-users me-3"></i>Gestión de Clientes</h5>
+          </div>
+      
+          <div class="card-body p-5">
+            <div class="mb-3">
+              <input #search type="text" placeholder="Ingresar Id o nombre" class="form-control d-inline-block w-50 me-2" />
+              <button (click)="buscarCliente(search.value)" class="btn btn-primary">
+                <i class="fa-solid fa-search me-1"></i> Buscar
+              </button>
+            </div>
+      
+            <div class="overflow-x-auto rounded-xl">
+              <table class="min-w-full bg-white border border-gray-200">
+                <thead class="bg-gray-100">
+                  <tr>
+                    <th class="px-4 py-2 text-left">Nombre</th>
+                    <th class="px-4 py-2 text-left">Usuario</th>
+                    <th class="px-4 py-2 text-left">Cédula</th>
+                    <th class="px-4 py-2 text-left">Teléfono</th>
+                    <th class="px-4 py-2 text-left">Email</th>
+                    <th class="px-4 py-2 text-left">Contraseña</th>
+                    <th class="px-4 py-2"></th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr *ngFor="let cliente of clientes">
+                    <td class="px-4 py-2">{{ cliente.nombre }}</td>
+                    <td class="px-4 py-2">{{ cliente.usuario }}</td>
+                    <td class="px-4 py-2">{{ cliente.cedula }}</td>
+                    <td class="px-4 py-2">{{ cliente.telefono }}</td>
+                    <td class="px-4 py-2">{{ cliente.email }}</td>
+                    <td class="px-4 py-2">{{ cliente.contrasena }}</td>
+                    <td class="px-4 py-2">
+                      <button (click)="verInfoCliente(cliente)" class="btn btn-info">
+                        Ver info
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-
-        <!-- Tabla de clientes -->
-        <table class="clients-table">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Usuario</th>
-                    <th>Cédula</th>
-                    <th>Teléfono</th>
-                    <th>Email</th>
-                    <th>Contraseña</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Erik</td>
-                    <td>22113334444</td>
-                    <td>1235566</td>
-                    <td>3125665</td>
-                    <td>erikgmail.com</td>
-                    <td>******</td>
-                    <td><button class="action-button">Ver info</button></td>
-                </tr>
-                <!-- Más filas pueden añadirse aquí -->
-            </tbody>
-        </table>
-    </div>
+      </div>
+      
 
 </body>
 </html>
