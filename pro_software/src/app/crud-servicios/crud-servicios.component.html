@@ -1,0 +1,51 @@
+<app-header></app-header>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    
+</head>
+<body>
+
+
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <h1>Servicios</h1>
+
+        <!-- Barra de búsqueda -->
+        <div class="search-bar">
+            <input type="text" placeholder="Ingresar Id o nombre">
+            <button class="search-button">Buscar</button>
+        </div>
+
+        <!-- Tabla de servicios -->
+        <table class="services-table">
+            <thead>
+                <tr>
+                    <th>#Servicio</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Limpieza profunda</td>
+                    <td>Descripción del servicio</td>
+                    <td>
+                        <button class="update-button">Actualizar</button>
+                        <button class="delete-button">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- Más filas pueden añadirse aquí -->
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

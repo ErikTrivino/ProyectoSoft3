@@ -39,12 +39,36 @@
 
         <div class="form-group">
             <label for="fechaHora">Establecer fecha y hora:</label>
-            <button id="agregarFechaHora" class="btn-mas">+</button>
+            <!--<button id="agregarFechaHora" class="btn-mas">+</button>-->
+            <button id="agregarFechaHora" class="btn-mas" (click)="toggleDateTimeModal()">+</button>
+
         </div>
         <div class="space"></div>
 
         <button type="submit" class="btn">Realizar solicitud</button>
     </div>
+
+    <!-- Ventana emergente -->
+    <div *ngIf="showDateTimeModal" class="modal">
+        <div class="modal-content">
+            <h2>Programar fecha y hora</h2>
+    
+            <!-- Campo de fecha -->
+            <input type="date" [(ngModel)]="selectedDate" placeholder="yyyy/mm/dd">
+    
+            <!-- Menú desplegable de horarios -->
+            <select [(ngModel)]="selectedTimeSlot">
+                <option value="">Seleccione el horario</option>
+                <option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</option>
+            </select>
+    
+            <div class="modal-actions">
+                <button class="btn" (click)="confirmDateTime()">Programar servicio</button>
+                <button class="btn" (click)="toggleDateTimeModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    
 </body>
 
 </html>
