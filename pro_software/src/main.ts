@@ -7,6 +7,7 @@ import { CRUDAdminComponent } from './app/crud-admin/crud-admin.component';
 import { RequestObservationComponent } from './app/request-observation/request-observation.component';
 import { CrudGestionClientesComponent } from './app/crud-gestion-clientes/crud-gestion-clientes.component';
 import { CrudServiciosComponent } from './app/crud-servicios/crud-servicios.component';
+import { LobbyComponent } from './app/lobby/lobby.component';
 
-bootstrapApplication(CrudGestionClientesComponent, appConfig)
+bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));

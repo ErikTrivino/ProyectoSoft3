@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-request-review',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,HeaderComponent],
   templateUrl: './request-review.component.html',
   styleUrl: './request-review.component.css'
 })

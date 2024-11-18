@@ -7,12 +7,12 @@ import { CrudGestionClientesComponent } from './crud-gestion-clientes/crud-gesti
 import { CrudServiciosComponent } from './crud-servicios/crud-servicios.component';
 
 export const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: LobbyComponent },
   { path: 'lobby', component: LobbyComponent }, 
   { path: 'app-request-review', component: RequestReviewComponent },
   { path: 'crud-admin', component: CRUDAdminComponent },
   { path: 'crud-cliente', component: CrudGestionClientesComponent }
 ,
-{ path: 'crud-cliente', component: CrudServiciosComponent }
+{ path: 'crud-servicio', component: CrudServiciosComponent }
 
 ];
