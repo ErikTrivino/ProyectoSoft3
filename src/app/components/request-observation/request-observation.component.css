@@ -1,0 +1,181 @@
+.telesai-popup { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px; 
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #CB1818;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 18px;
+    color: white;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+.content {
+    padding: 15px;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.field label {
+    margin-right: 10px;
+    margin-left: 20px;
+}
+
+.field input,
+.field textarea {
+    width: 60%;
+    padding: 3px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #D9D9D9;
+}
+
+
+.evidence-acta {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    gap: 5px;
+}
+
+.evidence, .acta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.evidence-button, .acta-button {
+    padding: 5px;
+    margin-top: 3px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100px;
+    text-align: center;
+}
+
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #ccc;
+    gap: 0px;
+}
+
+.actions button {
+    padding: 6px 1x;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 130px; 
+}
+
+.actions button:first-child {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.actions button:last-child {
+    background-color: #f44336;
+    color: white;
+
+
+@media (max-width: 768px) {
+    .telesai-popup {
+        width: 90%; 
+        padding: 10px;
+    }
+
+    .field {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .field label {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .field input,
+    .field textarea {
+        width: 100%;
+    }
+
+    .evidence-acta {
+        padding-left: 20px;
+        padding-right: 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .actions button {
+        width: 100%; 
+    }
+}
+
+@media (max-width: 480px) {
+    .header h2 {
+        font-size: 16px; 
+    }
+
+    .close-button {
+        font-size: 20px;
+    }
+
+    .field input,
+    .field textarea {
+        font-size: 14px; 
+    }
+
+    .actions button {
+        font-size: 14px; 
+    }
+}
+}

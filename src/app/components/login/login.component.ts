@@ -31,40 +31,39 @@ export class LoginComponent {
   VerifyMail(event: any) {
     this.invalidmail = "form-control ";
   }
+
   login() {
+
+    console.log("Se llama servicio")
     if (this.Login.email == '') {
       this.invalidmail = this.invalidmail + " is-invalid";
     }
     if (this.Login.password == '') {
+      
       this.invalidpass = this.invalidpass + " is-invalid";
     }
+    console.log("Se pasa filtros")
     if (this.Login.password != '' && this.Login.email != '') {
-      //this.modal.open();
+      console.log("Se pasa filtros 2")
       this.loginService.getToken(this.Login).subscribe({
         next: (data: any) => {
-          this.local.setToken(data.respuesta.token);
-          this.routes.navigate(['/home/recommendation']);
+          console.log("bien")
+          this.local.setToken(data.token);
+          this.routes.navigate(['/home/lobby']);
         },
         error: (err: any) => {
           let mensaje = "";
-          this.loginService.loginModerator(this.Login).subscribe({
-            next:(data)=>{
-              this.local.setToken(data.respuesta.token);
-              this.routes.navigate(['/home']);
-            },
-            error:(error)=>{
-              if (Array.isArray(err.error.respuesta)) {
-                for (let e of err.error.respuesta) {
-                  mensaje += "Campo: " + e.campo + "  Error: " + e.error + "\n";
-    
-                }
-              }else{
-                mensaje = err.error.respuesta;
-              }
-              
-            alert(mensaje);
+          if (Array.isArray(err.error.respuesta)) {
+            for (let e of err.error.respuesta) {
+              mensaje += "Campo: " + e.campo + "  Error: " + e.error + "\n";
+
             }
-          });
+          }else{
+            mensaje = err.error.respuesta;
+          }
+          
+        alert(mensaje);
+
         }
 
       });
@@ -77,3 +76,4 @@ export class LoginComponent {
     return false;
   }
 }
+

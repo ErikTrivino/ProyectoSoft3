@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { UsuarioDTO } from '../../model/UsuarioDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +10,13 @@ export class DataService {
 
   private data: any[]=[];
   private message: string="";
-  private businessOwner: any=[];
+  private usuario?: UsuarioDTO;
 
-  setBusinesses(data: any[]) {
+  setData(data: any[]) {
     this.data = data;
   }
 
-  getBusinesses() {
+  getData() {
     return this.data;
   }
 
@@ -27,11 +28,11 @@ export class DataService {
     return this.message;
   }
 
-  getBusinessOwner(){
-    return this.businessOwner;
+  setUsuario(usuario : UsuarioDTO){
+    this.usuario=usuario;
   }
 
-  SetBusinessOwner(business: any){
-    this.businessOwner=business;
+  getUsuario(){
+    return this.usuario;
   }
 }

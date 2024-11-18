@@ -1,53 +1,48 @@
 import { Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
-import { HomeComponent } from './components/home/home.component';
-import { AccountSettingComponent } from './components/account-setting/account-setting.component';
-import { MapComponent } from './components/map/map.component';
-import { ListBusinessComponent } from './components/list-business/list-business.component';
-import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { LoginGuard } from './services/guards/permissions.service';
 import { RolesGuard } from './services/guards/roles.service';
-import { CreateBusinessComponent } from './components/create-business/create-business.component';
-import { BusinessDatailComponent } from './components/business-datail/business-datail.component';
-import { RecommendationComponent } from './components/recommendation/recommendation.component';
-import { IndexComponent } from './components/index/index.component';
-import { UpdateBusinessComponent } from './components/update-business/update-business.component';
+import { LobbyComponent } from './components/lobby/lobby.component';
+import { RequestReviewComponent } from './components/request-review/request-review.component';
+import { CRUDAdminComponent } from './components/crud-admin/crud-admin.component';
+import { CrudGestionClientesComponent } from './components/crud-gestion-clientes/crud-gestion-clientes.component';
+import { CrudServiciosComponent } from './components/crud-servicios/crud-servicios.component';
+import { HomeComponent } from './components/home/home.component';
+import { SolicitudesComponent } from './components/solicitudes/solicitudes.component';
 
 export const routes: Routes = [
     {
-        path:'', component:IndexComponent, canActivate:[LoginGuard]
-    },{
-        path:'login', component:LoginComponent, canActivate:[LoginGuard]
-    },{
-        path:'signup', component:SignUpComponent, canActivate:[LoginGuard]
-    },{
-        path:'forgot-password', component:PasswordRecoveryComponent, canActivate:[LoginGuard]
-    },{
-        path:'home', component:HomeComponent, children:[
+        path: '', component: LoginComponent, canActivate: [LoginGuard]
+    },
+    {
+        path: 'home', component: HomeComponent, children: [
             {
-                path:'setting-account', component:AccountSettingComponent 
-            },{
-                path:'map', component:MapComponent
-            },{
-                path:'list-business' , component:ListBusinessComponent ,
-            },{
-                path:'recommendation' , component:RecommendationComponent ,
-            },{
-                path:'create-business', component:CreateBusinessComponent
-            },{
-                path:'business-details/:idBusiness', component:BusinessDatailComponent
-            },{
-                path:'update-business/:idBusiness', component:UpdateBusinessComponent
+                path: 'realizar-solicitud', component: RequestReviewComponent , canActivate: 
+                [RolesGuard], data: { expectedRole: ["Cliente"] }
+            },
+            {
+                path: 'lobby', component: LobbyComponent,
             }
-
+            ,
+            {
+                path: 'crud-admin', component: CRUDAdminComponent, canActivate: 
+                [RolesGuard], data: { expectedRole: ["Admin"] }
+            },
+            {
+                path: 'solicitudes', component: SolicitudesComponent, canActivate: 
+                [RolesGuard], data: { expectedRole: ["Admin","Cliente"] }
+            },
+            {
+                path: 'servicios', component: CrudServiciosComponent , canActivate: 
+                [RolesGuard], data: { expectedRole: ["Admin"] }
+            },{
+                path: 'observacion', component: RequestReviewComponent , canActivate: 
+                [RolesGuard], data: { expectedRole: ["Cliente"] }
+            },
         ]
     },
     {
-        path:'change-password', component:ChangePasswordComponent
-    },{
-        path: "**", pathMatch: "full", redirectTo: "",canActivate:[LoginGuard]
+        path: "**", pathMatch: "full", redirectTo: "", canActivate: [LoginGuard]
     }
 
 ];

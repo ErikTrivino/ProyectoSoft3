@@ -1,0 +1,83 @@
+.full-width {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    padding: 20px;
+    max-width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.search-bar button {
+    padding: 8px 20px;
+    background-color: #5961FF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+thead th {
+    background-color: black;
+    color: white;
+    padding: 12px;
+    text-align: center;    
+    vertical-align: middle;  
+    font-weight: bold;
+}
+
+tbody tr {
+    background-color: #f5f5f5;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+tbody td {
+    padding: 12px;
+    text-align: center;    
+    vertical-align: middle; 
+    border: none;
+}
+
+.action-button {
+    padding: 5px 20px;
+    min-width: 110px;
+    background-color: #5961FF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.action-button:hover {
+    background-color: #a81414;
+}

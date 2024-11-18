@@ -4,7 +4,7 @@ import { TokenServicesService } from '../services/ExtServices/token-services.ser
 
 export const usuarioInterceptor: HttpInterceptorFn = (req, next) => {
   const tokenService = inject(TokenServicesService);
-  const isApiUrl = req.url.includes("api/auth");
+  const isApiUrl = req.url.includes("api/v1/auth");
   if (!tokenService.isLogged() || isApiUrl) {
   return next(req);
   }

@@ -1,34 +1,12 @@
-<header class=" border-bottom">
-    <div class="container-fluid d-grid  " style="grid-template-columns: 2.5fr 1.5fr; grid-column-gap: 20px;">
-        <div class="d-flex align-items-center">
-          <form class="w-100 me-3 search" role="search">
-            <input type="search" class=" form-control" placeholder="Search..." aria-label="Search" [(ngModel)]="search" (keyup.enter)="searchBusiness()" name="search">
-            <select name="" id="" class="form-select filter" (change)="selectFiltro(filtro.value)" #filtro>
-              <option value="name" selected disabled>Filter</option>
-              <option value="type">Type</option>
-              <option value="location">Location</option>
-              <option value="name">Name</option>
-            </select>
-          </form>
-          
-        </div>
-        <div class="">
-            <div class="text">
-                
-                <form class="" role="search">
-                    <input type="search" class="name" [placeholder]="nickname" aria-label="Search" disabled>
-                </form>
-                
-                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img [src]="photo" alt="mdo" width="50" height="50" class="rounded-circle">
-                </a>
-                <ul class="dropdown-menu text-small shadow">
-                  <li><a class="dropdown-item" routerLink="/home/setting-account">Account Settings</a></li>
-                  <li><a class="dropdown-item" (click)="openSnackBar()">My Perfil</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" (click)="openModal()">Sign out</a></li>
-                </ul>
-              </div>
-        </div>
+<header>
+    <div class="containerHeader">
+        <h1>Telesai</h1>
+        <nav>
+            <ul>
+                <li><a href="/home/lobby">Inicio</a></li>
+                <li><a href="/home/realizar-solicitud">Solicitar Revisión</a></li>
+                <li><a href="/home/solicitudes">Mis Solicitudes</a></li>
+            </ul>
+        </nav>
     </div>
 </header>

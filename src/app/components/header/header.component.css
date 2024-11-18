@@ -1,22 +1,42 @@
-.text{
-    display: flex; /* Alinea los elementos verticalmente */
-    justify-content: flex-end; /* Coloca los elementos al final del contenedor */
+
+header {
+    background-color: red;
+    color: white;
+    padding: 1em 0;
+}
+
+.containerHeader {
+    margin-right: 40px;
+    margin-left: 40px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
-.search{
+
+h1 {
+    font-size: 28px;
+    margin: 0;
+    font-weight: normal;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
 }
-.filter{
-    width: 30%;
+
+nav ul li {
+    margin-left: 1em;
 }
-.name{
-    border: none;
-    background-color: transparent;
-    -webkit-text-fill-color: black;
-    font-family: 'Arial Narrow';
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
     font-size: 20px;
-    text-align: end;
+    font-weight: normal;
 }
-.custom-dialog {
-    border-radius: 10px;
+
+nav ul li a:hover {
+    text-decoration: underline;
 }

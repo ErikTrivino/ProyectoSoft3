@@ -1,0 +1,59 @@
+<div class="container">
+    <h1>Solicitar Revisión</h1>
+
+    <div class="form-group">
+        <label for="tipoServicio">Tipo servicio:</label>
+        <select id="tipoServicio" name="tipoServicio">
+            <option value="">Seleccionar</option>
+            <option *ngFor="let servicio of servicios" [value]="servicio.idServicio" [(ngModel)]="solicitud.idServicio">
+                {{ servicio.nombreServicio }}
+            </option>
+        </select>
+    </div>
+    <div>
+        <label for="ubicacion">Ubicación:</label>
+        <select id="ubicacion" name="ubicacion">
+            <option value="">Seleccionar</option>
+            <option *ngFor="let ubicacion of ubicaciones" [value]="ubicacion.idubicacion" [(ngModel)]="solicitud.idUbicacion">
+                {{ ubicacion.nombreubicacion }}
+            </option>
+        </select>
+    </div>
+
+    <div class="form-group descripcion">
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" placeholder="Descripción"
+            [(ngModel)]="solicitud.descripcion"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="fechaHora">Establecer fecha y hora:</label>
+        <!--<button id="agregarFechaHora" class="btn-mas">+</button>-->
+        <button id="agregarFechaHora" class="btn-mas" (click)="toggleDateTimeModal()">+</button>
+
+    </div>
+    <div class="space"></div>
+
+    <button type="submit" class="btn" (click)="realizarSolicitud()">Realizar solicitud</button>
+</div>
+
+<!-- Ventana emergente -->
+<div *ngIf="showDateTimeModal" class="modal">
+    <div class="modal-content">
+        <h2>Programar fecha y hora</h2>
+
+        <!-- Campo de fecha -->
+        <input type="date" [(ngModel)]="selectedDate">
+
+        <!-- Menú desplegable de horarios -->
+        <select [(ngModel)]="selectedTimeSlot">
+            <option value="">Seleccione el horario</option>
+            <option *ngFor="let slot of timeSlots" [value]="slot">{{ slot }}</option>
+        </select>
+
+        <div class="modal-actions">
+            <button class="btn" (click)="confirmDateTime()">Programar servicio</button>
+            <button class="btn" (click)="toggleDateTimeModal()">Cancelar</button>
+        </div>
+    </div>
+</div>

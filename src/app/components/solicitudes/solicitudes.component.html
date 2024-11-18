@@ -1,0 +1,97 @@
+<div class="container full-width">
+    <h1>Solicitudes</h1>
+  
+    <div class="search-bar">
+        <input
+        type="text"
+        placeholder="Ingresar Id o nombre"
+        [(ngModel)]="searchTerm"
+    />
+    <button (click)="filtrarSolicitudes()">Buscar</button>
+    </div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>#Solicitud</th>
+          <th>Operario</th>
+          <th>Supervisor</th>
+          <th>Fecha Solicitud</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let solicitud of solicitudesFiltradas">
+          <td>{{ solicitud.idSolicitud }}</td>
+          <td>{{ solicitud.operario }}</td>
+          <td>{{ solicitud.operario }}</td>
+          <td>{{ solicitud.fechaSolicitud | date: 'dd-MM-yyyy' }}</td>
+          <td>{{ solicitud.estado }}</td>
+          <td>
+            <button class="action-button" (click)="verInfo(solicitud)">Ver info</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div *ngIf="showSolictud" class="modal">
+      <div class="telesai-popup">
+        <div class="header">
+          <h2>Telesai</h2>
+          <button class="close-button" (click)="onClose()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="content">
+            <h2>Solicitud</h2>
+          <div class="field">
+            <label for="numero">Numero:</label>
+            <input type="text" id="numero" [(ngModel)]="solicitudSelect.idSolicitud">
+          </div>
+          <div class="field">
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" [(ngModel)]="solicitudSelect.estado">
+          </div>
+          <div class="field">
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente" [(ngModel)]="solicitudSelect.clienteNombre">
+          </div>
+          <div class="field">
+            <label for="ubicacion">Ubicacion:</label>
+            <input type="text" id="ubicacion" [(ngModel)]="solicitudSelect.ubicacion">
+          </div>
+          <div class="field">
+            <label for="servicio">Servicio:</label>
+            <input type="text" id="servicio" [(ngModel)]="solicitudSelect.servicio">
+          </div>
+          <div class="field">
+            <label for="supervisor">Supervisor:</label>
+            <input type="text" id="supervisor" [(ngModel)]="solicitudSelect.supervisor">
+          </div>
+          <div class="field">
+            <label for="operario">Operario:</label>
+            <input type="text" id="operario" [(ngModel)]="solicitudSelect.operario">
+          </div>
+          <div class="evidence-acta">
+            <div class="evidence">
+              <label>Evidencia</label>
+              <button class="acta-button" (click)="onEvidenceClick()">
+                <img src="../../../assets/images/clip.png" alt="Icono de Acta" class="button-icon" width="50"/>
+              </button>
+            </div>
+            <div class="acta">
+              <label>Acta</label>
+              <button class="acta-button" (click)="onDownloadActa()">
+                <img src="../../../assets/images/descargas.png" alt="Icono de Acta" class="button-icon" width="50" />
+                Descargar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button (click)="onValidate()">GenerarActa</button>
+          <button (click)="onReject()">Cerrar</button>
+        </div>
+    </div>
+    </div>
+</div>

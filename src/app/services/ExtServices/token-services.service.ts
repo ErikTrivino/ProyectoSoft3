@@ -5,24 +5,36 @@ import { Buffer } from 'buffer';
   providedIn: 'root'
 })
 export class TokenServicesService {
-  constructor(private router:Router){}
-  setToken(token:string){
+
+  constructor(private router: Router) { }
+  setToken(token: string) {
     window.sessionStorage.removeItem("token");
     window.sessionStorage.setItem("token", token);
   }
-  getToken():string|null{
+
+  getToken(): string | null {
     return window.sessionStorage.getItem("token");
   }
-  signUp(){
+  getEmail(): string {
+    const token = this.getToken();
+    if (token) {
+      const values = this.decodePayload(token);
+      return values.email;
+    }
+    return "";
+  }
+  signUp() {
     window.sessionStorage.clear();
     this.router.navigate([""]);
   }
+
   public isLogged(): boolean {
     if (this.getToken()) {
       return true;
     }
     return false;
   }
+
   private decodePayload(token: string): any {
     const payload = token!.split(".")[1];
     const payloadDecoded = Buffer.from(payload, 'base64').toString('ascii');
@@ -32,8 +44,8 @@ export class TokenServicesService {
   public getCodigo(): string {
     const token = this.getToken();
     if (token) {
-    const values = this.decodePayload(token);
-    return values.id;
+      const values = this.decodePayload(token);
+      return values.id;
     }
     return "";
   }
@@ -45,27 +57,20 @@ export class TokenServicesService {
     }
     return "";
   }
-  public getNickName(): string {
+  public getUsername(): string {
     const token = this.getToken();
     if (token) {
       const values = this.decodePayload(token);
-      return values.nickname;
+      return values.username;
     }
     return "";
   }
+
   public getName(): string {
     const token = this.getToken();
     if (token) {
       const values = this.decodePayload(token);
       return values.name;
-    }
-    return "";
-  }
-  public getPhoto(): string {
-    const token = this.getToken();
-    if (token) {
-      const values = this.decodePayload(token);
-      return values.photo;
     }
     return "";
   }
