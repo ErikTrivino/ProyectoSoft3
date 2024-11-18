@@ -8,5 +8,5 @@ import { RequestObservationComponent } from './app/request-observation/request-o
 import { CrudGestionClientesComponent } from './app/crud-gestion-clientes/crud-gestion-clientes.component';
 import { CrudServiciosComponent } from './app/crud-servicios/crud-servicios.component';
 
-bootstrapApplication(CrudServiciosComponent, appConfig)
+bootstrapApplication(CrudGestionClientesComponent, appConfig)
   .catch((err) => console.error(err));
