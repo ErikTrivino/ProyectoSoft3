@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../../components/popups/dialog/dialog.component';
 import { CreateListComponent } from '../../components/create-list/create-list.component';
 import { ChooseListComponent } from '../../components/choose-list/choose-list.component';
