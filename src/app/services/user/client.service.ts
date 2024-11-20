@@ -6,6 +6,7 @@ import { MensajeDTO } from '../../dto/mensajeDTO';
 import { enviroments } from '../../../environments/enviroments.prod';
 import { ServicioDTO } from '../../model/ServicioDTO';
 import { SolicitudDTO, SolicitudParams } from '../../model/SolicitudDTO';
+import { ClienteDTO } from '../../components/crud-gestion-clientes/cliente-dto';
 
 @Injectable({
     providedIn: 'root'
@@ -16,8 +17,8 @@ export class ClientService {
 
     constructor(private http: HttpClient, private local: TokenServicesService) { }
 
-    public getClientById(idClient: string): Observable<MensajeDTO> {
-        return this.http.get<MensajeDTO>(this.apiUrl + '/api/clients/getClientId/' + idClient);
+    public getClientAll(): Observable<ClienteDTO[]> {
+        return this.http.get<ClienteDTO[]>(this.apiUrl + '/moderator/allUsuarios');
     }
 
     public getServiciosAll(): Observable<ServicioDTO[]> {

@@ -18,8 +18,10 @@ import { EvidenciaDTO } from '../../model/EvidenciaDTO';
 })
 export class SolicitudesComponent implements OnInit {
 
-    constructor( private routes: Router, private local: TokenServicesService, private clienteService : ClientService) {
-
+    constructor( 
+        private routes: Router, 
+        private local: TokenServicesService, 
+        private clienteService : ClientService) {
     }
 
     solicitudes: SolicitudDTO[] = []; // Lista completa de solicitudes

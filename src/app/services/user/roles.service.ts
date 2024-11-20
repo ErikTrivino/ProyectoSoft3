@@ -16,7 +16,9 @@ export class RolesService {
 
     const expectedRole: string[] = next.data["expectedRole"];
     this.realRole = this.tokenService.getRole();
-
+    console.log(this.realRole)
+    console.log(expectedRole);
+    
     if (!this.tokenService.isLogged() || !expectedRole.some(r => this.realRole.includes(r))) {
       this.router.navigate([""]);
       return false;

@@ -1,6 +1,7 @@
 {
   "hosting": {
-    "public": "dist/proyecto-avanzada-final/browser",
+    "site": "app-frotend-telesai",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",

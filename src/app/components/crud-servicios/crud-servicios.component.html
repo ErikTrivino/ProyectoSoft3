@@ -1,16 +1,3 @@
-<app-header></app-header>
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios</title>
-    
-</head>
-<body>
-
-
 
     <!-- Contenedor principal -->
     <div class="container">
@@ -28,24 +15,21 @@
                 <tr>
                     <th>#Servicio</th>
                     <th>Nombre</th>
-                    <th>Descripción</th>
+                    <th>Estado</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Limpieza profunda</td>
-                    <td>Descripción del servicio</td>
-                    <td>
+                <tr *ngFor="let servicio of servicios">
+                    <th>{{servicio.idServicio}}</th>
+                    <th>{{servicio.nombreServicio}}</th>
+                    <th>{{servicio.idEstado}}</th>
+                    <th>
                         <button class="update-button">Actualizar</button>
                         <button class="delete-button">Eliminar</button>
-                    </td>
+                    </th>
                 </tr>
                 <!-- Más filas pueden añadirse aquí -->
             </tbody>
         </table>
     </div>
-
-</body>
-</html>

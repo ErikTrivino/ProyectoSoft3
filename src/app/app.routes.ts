@@ -25,7 +25,7 @@ export const routes: Routes = [
             }
             ,
             {
-                path: 'crud-admin', component: CRUDAdminComponent, canActivate: 
+                path: 'crud-admin', component: CrudGestionClientesComponent, canActivate: 
                 [RolesGuard], data: { expectedRole: ["Admin"] }
             },
             {
@@ -34,7 +34,7 @@ export const routes: Routes = [
             },
             {
                 path: 'servicios', component: CrudServiciosComponent , canActivate: 
-                [RolesGuard], data: { expectedRole: ["Admin"] }
+                [RolesGuard], data: { expectedRole: ["Admin","Cliente"] }
             },{
                 path: 'observacion', component: RequestReviewComponent , canActivate: 
                 [RolesGuard], data: { expectedRole: ["Cliente"] }

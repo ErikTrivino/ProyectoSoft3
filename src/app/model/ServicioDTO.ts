@@ -1,5 +1,5 @@
 export interface ServicioDTO {
-    idServicio?: number;
+    idServicio: number;
     nombreServicio?: string;
     idEstado?: number; // Puede ser nulo
 }
